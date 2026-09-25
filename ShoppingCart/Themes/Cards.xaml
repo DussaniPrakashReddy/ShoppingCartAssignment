@@ -1,0 +1,126 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ========================================================= -->
+    <!-- STANDARD APPLICATION CARD                                 -->
+    <!-- ========================================================= -->
+
+    <Style x:Key="CardStyle"
+           TargetType="{x:Type Border}">
+
+        <Setter Property="Background"
+                Value="{StaticResource SurfaceBrush}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource BorderBrush}" />
+
+        <Setter Property="BorderThickness"
+                Value="1" />
+
+        <Setter Property="CornerRadius"
+                Value="12" />
+
+        <Setter Property="Padding"
+                Value="20" />
+
+    </Style>
+
+
+    <!-- ========================================================= -->
+    <!-- PRODUCT CARD                                               -->
+    <!-- ========================================================= -->
+
+    <Style x:Key="ProductCardStyle"
+           TargetType="{x:Type Border}">
+
+        <Setter Property="Background"
+                Value="{StaticResource SurfaceBrush}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource BorderBrush}" />
+
+        <Setter Property="BorderThickness"
+                Value="1" />
+
+        <Setter Property="CornerRadius"
+                Value="12" />
+
+        <Setter Property="Padding"
+                Value="18" />
+
+        <Setter Property="Margin"
+                Value="7" />
+
+    </Style>
+
+
+    <!-- ========================================================= -->
+    <!-- CART CARD                                                  -->
+    <!-- ========================================================= -->
+
+    <Style x:Key="CartCardStyle"
+           TargetType="{x:Type Border}">
+
+        <Setter Property="Background"
+                Value="{StaticResource SurfaceBrush}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource BorderBrush}" />
+
+        <Setter Property="BorderThickness"
+                Value="1" />
+
+        <Setter Property="CornerRadius"
+                Value="14" />
+
+        <Setter Property="Padding"
+                Value="20" />
+
+    </Style>
+
+
+    <!-- ========================================================= -->
+    <!-- STATUS CARD                                                -->
+    <!-- ========================================================= -->
+
+    <Style x:Key="StatusCardStyle"
+           TargetType="{x:Type Border}">
+
+        <Setter Property="Background"
+                Value="#E8F7EE" />
+
+        <Setter Property="CornerRadius"
+                Value="14" />
+
+        <Setter Property="Padding"
+                Value="12,7" />
+
+    </Style>
+
+
+    <!-- ========================================================= -->
+    <!-- ORDER BADGE                                                -->
+    <!-- ========================================================= -->
+
+    <Style x:Key="OrderBadgeStyle"
+           TargetType="{x:Type Border}">
+
+        <Setter Property="Background"
+                Value="{StaticResource SurfaceBrush}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource BorderBrush}" />
+
+        <Setter Property="BorderThickness"
+                Value="1" />
+
+        <Setter Property="CornerRadius"
+                Value="8" />
+
+        <Setter Property="Padding"
+                Value="16,10" />
+
+    </Style>
+
+</ResourceDictionary>

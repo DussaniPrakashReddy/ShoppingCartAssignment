@@ -1,0 +1,31 @@
+﻿<Application x:Class="ShoppingCart.WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:ShoppingCart.WPF.Converters">
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary
+                    Source="/ShoppingCart.WPF;component/Themes/Colors.xaml" />
+                <ResourceDictionary
+                    Source="/ShoppingCart.WPF;component/Themes/Buttons.xaml" />
+                <ResourceDictionary
+                    Source="/ShoppingCart.WPF;component/Themes/Cards.xaml" />
+
+                <ResourceDictionary
+                    Source="/ShoppingCart.WPF;component/Themes/Typography.xaml" />
+
+                <ResourceDictionary
+                    Source="/ShoppingCart.WPF;component/Themes/Inputs.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+            <converters:BooleanToAvailabilityConverter
+            x:Key="BooleanToAvailabilityConverter" />
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

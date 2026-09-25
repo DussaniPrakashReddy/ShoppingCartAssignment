@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="ShoppingCart.WPF.Views.CustomerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Border Style="{StaticResource CardStyle}"
+            Padding="20">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!-- CUSTOMER INFORMATION -->
+
+            <StackPanel Grid.Row="0"
+                        Grid.Column="0">
+
+                <TextBlock Text="CUSTOMER"
+                           Style="{StaticResource FieldLabelStyle}"/>
+
+                <TextBlock Text="{Binding CustomerDisplayName}"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Foreground="{StaticResource TextPrimaryBrush}"
+                           Margin="0,5,0,12"/>
+
+                <TextBox Text="{Binding MobileNumber,
+                                        UpdateSourceTrigger=PropertyChanged}"
+                         Width="360"
+                         Height="42"
+                         HorizontalAlignment="Left"
+                         Style="{StaticResource SearchTextBoxStyle}"
+                         ToolTip="Enter customer mobile number"/>
+
+            </StackPanel>
+
+
+            <!-- SEARCH -->
+
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Content="SEARCH CUSTOMER"
+                    Command="{Binding FindCustomerCommand}"
+                    Width="180"
+                    Height="42"
+                    VerticalAlignment="Bottom"
+                    Margin="20,0,0,0"
+                    Style="{StaticResource PrimaryButtonStyle}"/>
+
+
+            <!-- STATUS -->
+
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Text="{Binding StatusMessage}"
+                       Foreground="{StaticResource TextSecondaryBrush}"
+                       FontSize="12"
+                       Margin="0,10,0,0"
+                       TextWrapping="Wrap"/>
+
+
+            <!-- CREATE CUSTOMER -->
+
+            <StackPanel Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Margin="0,10,0,0">
+
+                <StackPanel.Style>
+
+                    <Style TargetType="StackPanel">
+
+                        <Setter Property="Visibility"
+                                Value="Collapsed"/>
+
+                        <Style.Triggers>
+
+                            <DataTrigger Binding="{Binding IsCreateCustomerVisible}"
+                                         Value="True">
+
+                                <Setter Property="Visibility"
+                                        Value="Visible"/>
+
+                            </DataTrigger>
+
+                        </Style.Triggers>
+
+                    </Style>
+
+                </StackPanel.Style>
+
+
+                <TextBlock Text="Customer not found"
+                           Foreground="{StaticResource DangerBrush}"
+                           FontSize="12"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,3"/>
+
+                <TextBlock Text="Create a new customer to continue with this order."
+                           Foreground="{StaticResource TextSecondaryBrush}"
+                           FontSize="11"
+                           Margin="0,0,0,10"/>
+
+
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBox Width="280"
+                             Height="40"
+                             Text="{Binding NewCustomerName,
+                                            UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource SearchTextBoxStyle}"
+                             ToolTip="Enter customer name"/>
+
+                    <Button Content="CREATE CUSTOMER"
+                            Command="{Binding CreateCustomerCommand}"
+                            Style="{StaticResource SuccessButtonStyle}"
+                            Height="40"
+                            Margin="10,0,0,0"
+                            Padding="18,0"/>
+
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
+
+    </Border>
+
+</UserControl>
